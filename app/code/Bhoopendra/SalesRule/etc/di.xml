@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<!-- regarding cutom action -->
+	<preference for="Magento\SalesRule\Model\Rule\Action\Discount\CalculatorFactory" type="Bhoopendra\SalesRule\Model\Rule\Action\Discount\CalculatorFactory" />
+	<type name="Magento\SalesRule\Model\Rule\Metadata\ValueProvider">
+		<plugin disabled="false" name="Bhoopendra_SalesRule_Model_Plugin_Rule_Metadata_ValueProvider" sortOrder="10" type="Bhoopendra\SalesRule\Model\Plugin\Rule\Metadata\ValueProvider"/>
+	</type>
+	<!-- regarding custom condition -->
+	<type name="Bhoopendra\SalesRule\Model\Rule\Condition\CustomCondition">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="form_name" xsi:type="string">sales_rule_form</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
